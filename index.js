@@ -26,6 +26,12 @@ app.get("/login", (req, res) => {
     );
 });
 
+app.get("/info", (req, res) => {
+    res.sendFile(
+        path.join(__dirname, 'infographic.html')
+    )
+});
+
 app.get("/users", (req, res) => {
     res.json(user);
 });

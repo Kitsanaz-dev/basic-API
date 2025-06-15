@@ -1,15 +1,18 @@
 {
-  "name": "restapi",
+  "name": "basic-api",
   "version": "1.0.0",
-  "description": "learning",
+  "type": "module",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "express": "^5.1.0",
-    "nodemon": "^3.1.10"
+    "bootstrap": "^5.3.6",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
   }
 }

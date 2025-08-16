@@ -1,8 +1,18 @@
 {
   "name": "basic-api",
   "version": "1.0.0",
-  "type": "module",
   "description": "",
+  "homepage": "https://github.com/Kitsanaz-dev/project#readme",
+  "bugs": {
+    "url": "https://github.com/Kitsanaz-dev/project/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kitsanaz-dev/project.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -11,10 +21,11 @@
   "dependencies": {
     "bootstrap": "^5.3.6",
     "dotenv": "^17.2.1",
-    "express": "^4.18.2",
-    "mongoose": "^8.17.1"
+    "express": "^4.21.2",
+    "mongoose": "^8.17.1",
+    "path": "^0.12.7"
   },
   "devDependencies": {
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.1.10"
   }
 }

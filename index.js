@@ -11,7 +11,7 @@ const port = process.env.API_PORT;
 
 mongoDB();
 
-app.use(express.json())
+app.use(express.json());
 app.use(router);
 
 app.listen(port, () => {

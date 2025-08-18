@@ -30,7 +30,30 @@ const userController = {
             console.error("Error creating user:", err);
             res.status(500).json({ message: "Internal server error" });
         }
-    }
+    },
+    updateUserById: async (req, res) => {
+        try {
+            const userId = req.params.id;
+            const { name, age, phone } = req.body;
+            const updatedUser = await userService.updateUserById(userId, { name, age, phone });
+            if (!updatedUser) return res.status(404).json({ message: "User not found" });
+            res.status(200).json(updatedUser);
+        } catch (err) {
+            console.error("Error updating user by ID", err);
+            res.status(500).json({ message: "Internal server error" });
+        }
+    },
+    deleteUserById: async (req , res) => {
+        try {
+            const userId = req.params.id;
+            const user = await userService.deleteUserById(userId);
+            if (!user) return res.status(404).json({ message: "User not found" });
+            res.status(204).json({ message: "User deleted successfully" });
+        } catch (err) {
+            console.error("Error deleting user by ID", err);
+            res.status(500).json({ message: "Internal server error" });
+        }
+    },
 }
 
 export default userController;

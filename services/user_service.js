@@ -1,23 +1,11 @@
 import User from "../model/User.js";
 
 const userService = {
-
-    getAllUsers: async () => {
-        const users = await User.find();
-        return users;
-    },
-    getUserById: async (id) => {
-        const user = await User.findById(id);
-        return user;
-    },
-    createUser: async (name, age, phone) => {
-        const user = new User({
-            name,
-            age,
-            phone
-        });
-        return await user.save();
-    },
+    getAllUsers: async () => await User.find(),
+    getUserById: async (id) => await User.findById(id),
+    createUser: async (name, age, phone) => await User.create({ name, age, phone }),
+    updateUserById: async (id, data) => await User.findByIdAndUpdate(id, data),
+    deleteUserById: async (id) => await User.findByIdAndDelete(id),
 }
 
 export default userService;

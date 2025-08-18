@@ -7,7 +7,7 @@ import e from "express";
 dotenv.config(); 
 
 const app = express();
-const port = process.env.API_PORT;
+const port = process.env.API_PORT ?? 3000;
 
 mongoDB();
 

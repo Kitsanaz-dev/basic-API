@@ -2,6 +2,7 @@ import express from "express";
 import router  from "./routes/routers.js";
 import dotenv from 'dotenv';
 import mongoDB from "./mongodb.js";
+import cors from 'cors';
 
 dotenv.config(); 
 
@@ -12,6 +13,7 @@ mongoDB();
 
 app.use(express.json());
 app.use(router);
+app.use(cors());
 
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`);
